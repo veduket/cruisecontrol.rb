@@ -13,6 +13,7 @@ gem "jquery-rails", '1.0.9'
 gem "abstract", "1.0.0"
 gem "xmpp4r"
 gem "puma"
+gem "capistrano"
 
 group :development do
   gem "rcov", '0.9.9', :platforms => [:ruby_18]
