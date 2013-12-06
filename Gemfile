@@ -1,14 +1,14 @@
 source "http://rubygems.org"
 
 gem "rails", "3.2.15"
-gem "tzinfo"#, "0.3.27"
-gem "rack"#, "1.2.3"
-gem "bundler"#, "~> 1.0.12"
+gem "tzinfo"
+gem "rack"
+gem "bundler"
 
-gem "httparty", "0.6.1"
-gem "api_cache", "0.2.0"
-gem "xml-simple", '1.0.16', :require => 'xmlsimple'
-gem "rake", "~> 0.9.2.2"
+gem "httparty",     "0.6.1"
+gem "api_cache",    "0.2.0"
+gem "xml-simple",   '1.0.16', :require => 'xmlsimple'
+gem "rake"
 gem "jquery-rails", '1.0.9'
 gem "abstract", "1.0.0"
 gem "xmpp4r"
