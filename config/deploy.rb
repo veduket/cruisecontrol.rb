@@ -27,8 +27,11 @@ namespace :deploy do
   end
   
   task :restart do
-    sudo 'stop switching-reporting || echo 0'
-    sudo 'start switching-reporting || echo 0'
+    sudo 'stop cruisecontrol || echo 0'
+    sudo 'start cruisecontrol || echo 0'
+
+    sudo 'stop cruisecontrol_builder || echo 0'
+    sudo 'start cruisecontrol_builder || echo 0'
   end
   
   task :restart_nginx do
@@ -37,6 +40,7 @@ namespace :deploy do
   
   task :install_upstart do
     sudo "cp #{current_path}/config/cruisecontrol.conf /etc/init/cruisecontrol.conf || echo 0"
+    sudo "cp #{current_path}/config/cruisecontrol_builder.conf /etc/init/cruisecontrol_builder.conf || echo 0"
   end
    
   after 'deploy:setup', 'deploy:install_bundler'
