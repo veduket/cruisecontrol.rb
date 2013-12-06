@@ -39,18 +39,6 @@ namespace :deploy do
     sudo "cp #{current_path}/config/cruisecontrol.conf /etc/init/cruisecontrol.conf || echo 0"
   end
    
-  desc "Create symlink to the export folder using by the plan ending report"
-  task :symlink_export do
-    run "rm -rf #{release_path}/export"
-    run "mkdir -p #{shared_path}/export"
-    run "ln -nfs #{shared_path}/export #{release_path}/export"
-  end
-  
-  task :sid do
-    run "cd #{current_path} && RACK_ENV=production bundle exec rake consumptions_test"
-  end
-
   after "deploy:setup", "deploy:install_bundler"
-  after "deploy", "deploy:install_upstart", "deploy:cleanup", "worker:restart", "deploy:install_cron"
-  after "deploy:update_code", "deploy:symlink_export"
+  after "deploy", "deploy:install_upstart", "deploy:cleanup"
 end
