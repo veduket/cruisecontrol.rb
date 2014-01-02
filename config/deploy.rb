@@ -43,5 +43,6 @@ namespace :deploy do
   end
    
   after 'deploy:setup', 'deploy:install_bundler'
-  after 'deploy', 'deploy:install_upstart', 'deploy:cleanup'
+  after 'deploy:create_symlink', 'deploy:install_upstart'
+  afert 'deploy', 'deploy:cleanup'
 end
