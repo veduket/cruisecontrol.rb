@@ -14,8 +14,7 @@ set :scm, :git
 set :use_sudo, false
 set :ssh_options, {:port => 8008, :forward_agent => true}
 
-role :web, 'ec2-54-228-156-149.eu-west-1.compute.amazonaws.com'
-
+role :web, 'energy-switching-reporting.uswitchinternal.com'
 
 namespace :deploy do
   task :start do ; end
